@@ -6,4 +6,6 @@ import com.cognizant.pojo.ActorsEntity;
 
 public interface ProjectRepository extends CrudRepository<ActorsEntity, Integer> {
 
+	
+
 }

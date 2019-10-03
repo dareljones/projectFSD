@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.cognizant.pojo.ActorsEntity;;
 
-public interface ProjectDao {
+public interface ProjectDao  {
 
 	public void addTodo(ActorsEntity c);
 

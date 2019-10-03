@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,13 +19,16 @@ public class ProjectServiceImpl implements ProjectService {
 	@Autowired
 	ProjectRepository dao;
 	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
 
 	@Override
 	@Transactional
 	public List<ActorsEntity> getAllTodos() {
-		List<ActorsEntity> todoList = new ArrayList<>();
-		dao.findAll().forEach(e -> todoList.add(e));
-		return todoList;
+		Session session = sessionFactory.getCurrentSession();
+		List<ActorsEntity> list = session.createQuery("from ActorsEntity").list();
+		return list;
 	}
 
 	@Override

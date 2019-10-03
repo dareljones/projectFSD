@@ -1,5 +1,7 @@
 package com.cognizant.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,11 @@ return "index";
 public ActorsEntity addTodo(@RequestBody ActorsEntity t) {
 ActorsEntity todo = service.addTodo(t);
 return todo;
+}
+@RequestMapping(value = "/todos/getAllTodos", method = RequestMethod.GET, headers = "Accept=application/json")
+public List<ActorsEntity> getAllTodos() {
+List<ActorsEntity> todoList = service.getAllTodos();
+return todoList;
 }
 
 }

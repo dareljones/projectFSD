@@ -12,7 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "actors")
+@Table(name = "mentortable")
 public class ActorsEntity implements Serializable {
 
 	
@@ -22,9 +22,7 @@ public class ActorsEntity implements Serializable {
 	@Column(name = "actor_id")
 	private Integer actorId;
 
-	public void setUserDetails(UserDetailsEntity userDetails) {
-		this.userDetails = userDetails;
-	}
+	
 
 	@Column(name = "actor_email")
 	private String actorEmail;
@@ -33,21 +31,14 @@ public class ActorsEntity implements Serializable {
 	@Column(name = "actor_type")
 	private String actorType;
 	@Column(name = "actor_status")
-	private Boolean actorStatus;
+	private String actorStatus;
 
-	@OneToOne(targetEntity = UserDetailsEntity.class)
-	@JoinColumn(name = "user_id")
-	private UserDetailsEntity userDetails;
-
-	@OneToOne(targetEntity = MentorDetailsEntity.class)
-	@JoinColumn(name = "mentor_id")
-	private MentorDetailsEntity mentorDetails;
-
+	
 	public ActorsEntity() {
 		super();
 	}
 
-	public ActorsEntity(String actorEmail, String actorPassword, String actorType, Boolean actorStatus) {
+	public ActorsEntity(String actorEmail, String actorPassword, String actorType, String actorStatus) {
 		super();
 		this.actorEmail = actorEmail;
 		this.actorPassword = actorPassword;
@@ -55,9 +46,7 @@ public class ActorsEntity implements Serializable {
 		this.actorStatus = actorStatus;
 	}
 
-	public void setMentorDetails(MentorDetailsEntity mentorDetails) {
-		this.mentorDetails = mentorDetails;
-	}
+	
 
 	public Integer getId() {
 		return actorId;
@@ -87,11 +76,11 @@ public class ActorsEntity implements Serializable {
 		this.actorType = actorType;
 	}
 
-	public Boolean getActorStatus() {
+	public String getActorStatus() {
 		return actorStatus;
 	}
 
-	public void setActorStatus(Boolean actorStatus) {
+	public void setActorStatus(String actorStatus) {
 		this.actorStatus = actorStatus;
 	}
 
