@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.cognizant.dao.ProjectRepository;
 import com.cognizant.pojo.ActorsEntity;
@@ -26,9 +27,12 @@ public class ProjectServiceImpl implements ProjectService {
 	@Override
 	@Transactional
 	public List<ActorsEntity> getAllTodos() {
-		Session session = sessionFactory.getCurrentSession();
-		List<ActorsEntity> list = session.createQuery("from ActorsEntity").list();
-		return list;
+//		Session session = sessionFactory.getCurrentSession();
+//		List<ActorsEntity> list = session.createQuery("from ActorsEntity").list();
+//		return list;
+		List<ActorsEntity> tech =new ArrayList<ActorsEntity>();
+		dao.findAll().forEach(tech::add);
+		return tech;
 	}
 
 	@Override
