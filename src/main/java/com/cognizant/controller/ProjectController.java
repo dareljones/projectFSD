@@ -21,7 +21,7 @@ public String getHomePage() {
 return "index";
 }
 
-@RequestMapping(value = "/getTechnologies", method = RequestMethod.GET, headers = "Accept=application/json")
+@RequestMapping(value = "getcourse", method = RequestMethod.GET, headers = "Accept=application/json")
 public List<TechnologiesEntity> getTechnologies() {
 List<TechnologiesEntity> tech = service.getTechnologies();
 return tech;
