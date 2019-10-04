@@ -1,0 +1,10 @@
+com\cognizant\ProjectApplication.class
+com\cognizant\service\ProjectServiceImpl.class
+com\cognizant\pojo\ActorsEntity.class
+com\cognizant\dao\ProjectDao.class
+com\cognizant\hibernateconfig\HibernateConfiguration.class
+com\cognizant\controller\ProjectController.class
+com\cognizant\dao\ProjectDaoImpl.class
+com\cognizant\pojo\TechnologiesEntity.class
+com\cognizant\service\ProjectService.class
+com\cognizant\dao\ProjectRepository.class
